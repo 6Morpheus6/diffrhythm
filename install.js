@@ -6,6 +6,7 @@ module.exports = {
       params: {
         message: [
           "git clone https://huggingface.co/spaces/cocktailpeanut/DiffRhythm app",
+          "pnpm install",
         ]
       }
     },
