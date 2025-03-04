@@ -33,12 +33,12 @@ module.exports = {
         ]
       }
     },
-    {
-      method: "fs.link",
-      params: {
-        venv: "app/env"
-      }
-    },
+//    {
+//      method: "fs.link",
+//      params: {
+//        venv: "app/env"
+//      }
+//    },
     // espeak-ng installer script lifted from AllTalk Launcher from 6Morpheus6
     // https://github.com/pinokiofactory/AllTalk-TTS/blob/main/install.js
     {
