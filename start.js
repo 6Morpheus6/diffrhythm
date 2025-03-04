@@ -2,8 +2,6 @@ const fg = require('fast-glob');
 const path = require('path')
 module.exports = async (kernel) => {
   let env = {
-    ZONOS_HOST: "127.0.0.1",
-    TORCHINDUCTOR_CACHE_DIR: kernel.path("cache/TORCH_INDUCTOR")
 //    PYTHONUTF8: 1
   }
   if (kernel.platform === 'darwin') {
@@ -38,8 +36,6 @@ module.exports = async (kernel) => {
     env.ESPEAK_DATA_PATH = path.resolve(espeakRoot, "espeak-ng-data")
     let LIBPATH = kernel.bin.path("miniconda/libs")
     env.LINK = `/LIBPATH:${LIBPATH}`
-//    env.CXX = "cl.exe"
-//    env.CC = "cl.exe"
   }
   console.log("ENV", env)
   return {
