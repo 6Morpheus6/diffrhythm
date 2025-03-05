@@ -61,6 +61,9 @@ module.exports = async (kernel) => {
             // "done": true will move to the next step while keeping the shell alive.
             // "kill": true will move to the next step after killing the shell.
             "done": true
+          }, {
+            "event": "/Error: Could not load the mbrola.dll/",
+            "break": false
           }]
         }
       },
