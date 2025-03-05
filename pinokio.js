@@ -2,7 +2,7 @@ const path = require('path')
 module.exports = {
   version: "3.6",
   title: "DiffRhythm",
-  description: "Blazingly Fast and Embarrassingly Simple End-to-End Full-Length Song Generation with Latent Diffusion (Generate songs from reference melody + Lyrics) https://github.com/ASLP-lab/DiffRhythm",
+  description: "[NVIDIA ONLY] Blazingly Fast and Embarrassingly Simple End-to-End Full-Length Song Generation with Latent Diffusion (Generate songs from reference melody + Lyrics) https://github.com/ASLP-lab/DiffRhythm",
   icon: "icon.jpg",
   menu: async (kernel, info) => {
     let installed = info.exists("app/env")
