@@ -5,8 +5,8 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          //"git clone https://huggingface.co/spaces/cocktailpeanut/DiffRhythm app",
-          "git clone https://github.com/mp3pintyo/DiffRhythm app",
+          "git clone https://huggingface.co/spaces/cocktailpeanut/DiffRhythm app",
+          //"git clone https://github.com/mp3pintyo/DiffRhythm app",
           //"git clone https://github.com/peanutcocktail/DiffRhythm app",
           "pnpm install",
         ]
@@ -16,7 +16,8 @@ module.exports = {
     {
       method: "shell.run",
       params: {
-        venv: "app/env",                // Edit this to customize the venv folder path
+        venv: "env",                // Edit this to customize the venv folder path
+        path: "app",
         message: [
           "uv pip install -r requirements.txt",
         ]
