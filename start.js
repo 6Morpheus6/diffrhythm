@@ -3,7 +3,8 @@ const path = require('path')
 module.exports = async (kernel) => {
   let env = {
 //    PYTHONUTF8: 1
-    LOW_MEMORY: 1
+    LOW_MEMORY: 1,
+    PYTHONUTF8: 1
   }
   if (kernel.platform === 'darwin') {
     try {
