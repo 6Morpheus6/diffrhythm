@@ -34,6 +34,41 @@ module.exports = {
         ]
       }
     },
+    // Edit this step with your custom install commands
+    {
+      method: "shell.run",
+      params: {
+        venv: "env",                // Edit this to customize the venv folder path
+        path: "app",
+        message: [
+          "{{platform === 'darwin' ? 'uv pip install onnxruntime' : ''}}",
+          "{{gpu === 'nvidia' ? 'uv pip install onnxruntime-gpu' : ''}}",
+        ]
+      }
+    },
+    // Edit this step with your custom install commands
+    {
+      when: "{{gpu === 'nvidia'}}",
+      method: "shell.run",
+      params: {
+        venv: "env",                // Edit this to customize the venv folder path
+        path: "app",
+        message: [
+          "uv pip install onnxruntime-gpu"
+        ]
+      }
+    },
+    {
+      when: "{{platform === 'darwin'}}",
+      method: "shell.run",
+      params: {
+        venv: "env",                // Edit this to customize the venv folder path
+        path: "app",
+        message: [
+          "uv pip install onnxruntime"
+        ]
+      }
+    },
     // Delete this step if your project does not use torch
 //    {
 //      method: "fs.link",
