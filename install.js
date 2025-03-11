@@ -36,13 +36,24 @@ module.exports = {
     },
     // Edit this step with your custom install commands
     {
+      when: "{{gpu === 'nvidia'}}",
       method: "shell.run",
       params: {
         venv: "env",                // Edit this to customize the venv folder path
         path: "app",
         message: [
-          "{{platform === 'darwin' ? 'uv pip install onnxruntime' : ''}}",
-          "{{gpu === 'nvidia' ? 'uv pip install onnxruntime-gpu' : ''}}",
+          "uv pip install onnxruntime-gpu",
+        ]
+      }
+    },
+    {
+      when: "{{gpu !== 'nvidia'}}",
+      method: "shell.run",
+      params: {
+        venv: "env",                // Edit this to customize the venv folder path
+        path: "app",
+        message: [
+          "uv pip install onnxruntime"
         ]
       }
     },
