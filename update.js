@@ -15,5 +15,10 @@ module.exports = {
     params: {
       path: "ENVIRONMENT"
     }
+  }, {
+    method: "script.start",
+    params: {
+      uri: "install.js"
+    }
   }]
 }
