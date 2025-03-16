@@ -71,7 +71,10 @@ module.exports = {
       when: "{{which('brew')}}",
       method: "shell.run",
       params: {
-        message: "brew install espeak-ng"
+        message: "brew install espeak-ng",
+        env: {
+          HOMEBREW_NO_AUTO_UPDATE: 1
+        }
       },
       next: 'end'
     },
