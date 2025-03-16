@@ -7,6 +7,7 @@ module.exports = {
         message: [
           "git lfs install",
           "git clone https://huggingface.co/spaces/cocktailpeanut/DiffRhythm app",
+          "git checkout full",
           //"git clone https://github.com/mp3pintyo/DiffRhythm app",
           //"git clone https://github.com/peanutcocktail/DiffRhythm app",
           "pnpm install",
