@@ -18,7 +18,7 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "brew install cmake",
+          "conda install -c conda-forge cmake>3.5"
         ]
       }
     },
