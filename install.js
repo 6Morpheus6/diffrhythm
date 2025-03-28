@@ -18,7 +18,7 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "conda install -c conda-forge cmake>3.5"
+          "conda install -y -c conda-forge cmake>3.5"
         ]
       }
     },
