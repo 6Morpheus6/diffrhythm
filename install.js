@@ -13,15 +13,15 @@ module.exports = {
         ]
       }
     },
-    {
-      when: "{{platform === 'darwin'}}",
-      method: "shell.run",
-      params: {
-        message: [
-          "conda install -y -c conda-forge cmake=4.0.0"
-        ]
-      }
-    },
+//    {
+//      when: "{{platform === 'darwin'}}",
+//      method: "shell.run",
+//      params: {
+//        message: [
+//          "conda install -y -c conda-forge cmake=4.0.0"
+//        ]
+//      }
+//    },
     {
       method: "script.start",
       params: {
@@ -40,7 +40,7 @@ module.exports = {
         venv: "env",                // Edit this to customize the venv folder path
         path: "app",
         message: [
-          "uv pip install -r requirements.txt",
+          "pip install -r requirements.txt",
         ]
       }
     },
