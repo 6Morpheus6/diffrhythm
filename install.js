@@ -14,6 +14,15 @@ module.exports = {
       }
     },
     {
+      when: "{{platform === 'darwin'}}",
+      method: "shell.run",
+      params: {
+        message: [
+          "conda install -c conda-forge cmake"
+        ]
+      }
+    },
+    {
       method: "script.start",
       params: {
         uri: "torch.js",
