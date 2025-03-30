@@ -4,7 +4,17 @@ module.exports = {
   title: "DiffRhythm",
   description: "Generate songs with AI (up to 4 min 45 sec). Both with lyrics or instrumental https://github.com/ASLP-lab/DiffRhythm",
   icon: "icon.jpg",
-  bitcoin: "bc1qx90z3ce9qz4p2pnt06gd0ytntl86qw4d6qv39k",
+  links: [{
+    type: "bitcoin",
+    title: "cocktailpeanut",
+    value: "bc1qx90z3ce9qz4p2pnt06gd0ytntl86qw4d6qv39k",
+  }, {
+    title: "X",
+    value: "https://x.com/cocktailpeanut",
+  }, {
+    title: "Github",
+    value: "https://github.com/cocktailpeanut",
+  }],
   menu: async (kernel, info) => {
     let installed = info.exists("app/env")
     let running = {
