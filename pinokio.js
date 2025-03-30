@@ -6,7 +6,7 @@ module.exports = {
   icon: "icon.jpg",
   links: [{
     type: "bitcoin",
-    title: "cocktailpeanut",
+    title: "tip bitcoin",
     value: "bc1qx90z3ce9qz4p2pnt06gd0ytntl86qw4d6qv39k",
   }, {
     title: "X",
