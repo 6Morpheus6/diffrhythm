@@ -6,14 +6,13 @@ module.exports = {
   icon: "icon.jpg",
   links: [{
     type: "bitcoin",
-    title: "tip bitcoin",
     value: "bc1qx90z3ce9qz4p2pnt06gd0ytntl86qw4d6qv39k",
-  }, {
-    title: "X",
-    value: "https://x.com/cocktailpeanut",
-  }, {
-    title: "Github",
-    value: "https://github.com/cocktailpeanut",
+//  }, {
+//    title: "X",
+//    value: "https://x.com/cocktailpeanut",
+//  }, {
+//    title: "Github",
+//    value: "https://github.com/cocktailpeanut",
   }],
   menu: async (kernel, info) => {
     let installed = info.exists("app/env")
