@@ -1,14 +1,15 @@
 module.exports = {
   run: [
-    // nvidia 50 series
+    // nvidia 50 series (windows)
     {
-      "when": "{{gpu === 'nvidia' && kernel.gpu_model && / 50.+/.test(kernel.gpu_model) }}",
+      "when": "{{gpu === 'nvidia' && platform === 'win32' && kernel.gpu_model && / 50.+/.test(kernel.gpu_model) }}",
       "method": "shell.run",
       "params": {
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": [
-          "uv pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128"
+          "uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128",
+          "uv pip install -U --pre triton-windows"
         ]
       },
       "next": null
@@ -66,6 +67,19 @@ module.exports = {
         "message": "uv pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2"
       }
     },
+    // nvidia 50 series (linux)
+    {
+      "when": "{{gpu === 'nvidia' && platform === 'linux' && kernel.gpu_model && / 50.+/.test(kernel.gpu_model) }}",
+      "method": "shell.run",
+      "params": {
+        "venv": "{{args && args.venv ? args.venv : null}}",
+        "path": "{{args && args.path ? args.path : '.'}}",
+        "message": [
+          "uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128"
+        ]
+      },
+      "next": null
+    },
     // linux nvidia
     {
       "when": "{{platform === 'linux' && gpu === 'nvidia'}}",
@@ -86,7 +100,7 @@ module.exports = {
       "params": {
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
-        "message": "uv pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/rocm6.0"
+        "message": "uv pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/rocm6.2"
       }
     },
     // linux cpu
